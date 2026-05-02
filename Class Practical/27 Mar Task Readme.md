@@ -197,7 +197,7 @@ Kubernetes maintains the system state using a **reconciliation loop**, ensuring 
 
 ##  Author
 
-Daksh Mehrotra
-500125960
+Saumil Mishra
+500121132
 
 ---
