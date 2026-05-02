@@ -1,751 +1,1077 @@
-# Containerization and DevOps Lab Repository
-
-Welcome to my **Containerization and DevOps** laboratory repository.
-
-This repository contains all my **college-related coursework, lab experiments, practical implementations, class activities, documentation, and notes** for the subject **Containerization and DevOps**.
-
-The main objective of this repository is to develop a strong understanding of how modern software applications are:
-
-- Built and deployed efficiently  
-- Containerized using Docker  
-- Automated through DevOps workflows  
-- Managed using industry-standard tools and practices  
-
-This repository is maintained strictly for **academic submission and learning purposes**.
-
----
-
-## Author Information
-
-- **Name:** Saumil Mishra  
-- **SAP ID:** 500121132  
-- **Roll Number:** R2142230897  
-- **Batch:** 2 CCVT  
-- **Program:** B.Tech Student  
-- **Repository Type:** College Lab + Class Work Submission  
-
----
-
-## Purpose of This Repository
-
-This repository is created as part of my official college laboratory coursework for:
-
-**Containerization and DevOps**
-
-It includes:
-
-- Lab experiment implementations  
-- Class practical activities  
-- Teacher-guided command execution  
-- Step-by-step documentation  
-- Output screenshots  
-- Observations and conclusions  
-- Notes for concept understanding  
-- Assignments
-
----
-
-## Lab Experiments Included
-
-### Experiment 1 — Virtual Machines vs Containers  
-A DevOps-oriented comparison between Virtual Machines and Containers using:
-
-- Ubuntu  
-- VirtualBox  
-- Vagrant  
-- Docker  
-- Nginx  
-
-This experiment demonstrates:
-
-- Infrastructure provisioning  
-- VM-based deployment workflow  
-- Containerized service execution  
-- Architectural differences in isolation and performance  
-
-Link: [Experiment 1 — Virtual Machines vs Containers](./Experiment-1/)
-
----
-
-### Experiment 2 — Docker Installation & Container Lifecycle  
-This experiment covers the fundamentals of Docker including:
-
-- Pulling images  
-- Running containers with port mapping  
-- Verifying services in browser  
-- Resolving port conflicts  
-- Container start/stop/remove lifecycle commands  
-
-Link: [Experiment 2 — Docker Installation & Container Lifecycle](./Experiment-2/)
----
-
-### Experiment 3 — Custom Docker Images (Ubuntu & Alpine Based NGINX)
-This experiment focuses on building custom Docker images using different Linux base images and deploying NGINX inside containers.
-Base Images Used:
-- Ubuntu 22.04
-- Alpine Linux
-
-This experiment demonstrates:
-- Writing Dockerfiles for custom image creation
-- Installing services inside containers (NGINX)
-- Building Docker images using custom SAP-based tags
-- Running multiple containers with different port mappings
-- Comparing Ubuntu vs Alpine image size and performance
-- Understanding lightweight container optimization
-
-Key Implementation:
-- Official NGINX container → Port 8080
-- Ubuntu-based custom container → Port 8081
-- Alpine-based custom container → Port 8082
-
-Link: [Experiment 3 — Custom Docker Images (Ubuntu & Alpine Based NGINX)](./Experiment-3/)
-
----
-
-
-### Experiment 4 - Containerization using Dockerfile, .dockerignore, Tagging & Publishing
-The experiment was successfully completed by containerizing both a Python Flask application and a Node.js Express application using Docker. The following outcomes were achieved:
-
-- Docker images were built successfully using custom Dockerfile.
-- .dockerignore was implemented to optimize image size and security.
-- Containers were executed with proper port mapping.
-- Multi-stage build was implemented to optimize production image size.
-- Docker images were successfully tagged and published to Docker Hub.
-- The published image was pulled and executed successfully from Docker Hub.
-- Both applications were accessible via browser:
-- Flask App → http://localhost:5001
-- Node App → http://localhost:3000
-- The Docker workflow from build → run → tag → push → pull → run was validated successfully.
-
-Link: [Experiment 4 - Docker Networking, Volumes & Environment Variables Lab](./Experiment-4/)
-
----
-
-### Experiment 5 - Containerization using Dockerfile, .dockerignore, Tagging & Publishing
-- All objectives of Experiment 5 were successfully completed.
-The experiment demonstrated a practical understanding of:
-- Docker networking architecture
-- Persistent storage management
-- Secure configuration handling using environment variables
-- Runtime configuration override
-- Container monitoring and debugging tools
-- The implementation validates correct container orchestration principles and production-ready configuration practices.
-
-Link: [Experiment 5 - Docker Networking, Volumes & Environment Variables Lab](./Experiment-5/)
-
----
-
-### Experiment 6 - Docker Run vs Docker Compose
-- All objectives of Experiment 6 were successfully completed.
-The experiment demonstrated a practical understanding of:
-- Understood Docker Run vs Compose
-- Built single and multi-container applications
-- Converted commands to Compose
-- Used Dockerfile with Compose
-- Learned basics of container orchestration
-
-Link: [Experiment 6 - Docker Run vs Docker Compose](./Experiment-6/)
-
----
-
-### Experiment 7 - CI/CD Pipeline using Jenkins, GitHub and Docker Hub
-- All objectives of Experiment 7 were successfully completed.
-The experiment demonstrated a practical understanding of:
-- Jenkins GUI simplifies CI/CD pipeline management
-- GitHub acts as both source repository and pipeline definition store
-- Docker ensures consistent and reproducible builds
-- Webhook enables fully automated build and deployment
-- Mac M1 (ARM64) requires a custom Jenkins image with native Docker CLI
-
-Link: [Experiment 7 - CI/CD Pipeline using Jenkins, GitHub and Docker Hub](./Experiment-7/)
-
----
-
-## Experiment 9 - Ansible Automation with Docker
-- All objectives of Experiment 9 were successfully completed.
-The experiment demonstrated a practical understanding of:
-
-- Understand the architecture of Ansible — including the roles of the control node, managed nodes, inventory, modules, tasks, and playbooks, and how they work together in an agentless, SSH-based automation model.
-- Set up SSH key-based authentication between a control machine and multiple remote servers, and understand why this is essential for automated, passwordless server management.
-- Use Ansible modules such as apt, copy, command, and debug to perform common system administration tasks declaratively.
-- Demonstrate idempotency — understanding that running the same playbook multiple times produces the same result without unintended side effects, which is a critical property for reliable infrastructure automation.
-- Execute ad-hoc Ansible commands for quick, one-off tasks without writing a full playbook.
-- Use Docker containers as simulated servers to practice multi-node infrastructure management in a local environment without requiring real cloud VMs.
-- Recognize the practical value of Infrastructure as Code (IaC) — how version-controlled, declarative configuration files eliminate configuration drift and enable consistent, repeatable deployments at scale.
-
-Link: [Experiment 9 - Ansible Automation with Docker](./Experiment-9/)
-
----
-## Experiment 10 - SonarQube: Continuous Code Quality Inspection
-All objectives of Experiment 10 were successfully completed.
-The experiment demonstrated a practical understanding of:
-Here are 5 practical understanding points for Lab 10:
-- SonarQube needs two separate components to work You can't just run the server — nothing gets analyzed. And you can't just run the scanner — there's nowhere to send results. You learned this hands-on when you ran docker compose up -d for the server first, then separately triggered mvn sonar:sonar as the scanner. Both must be running and connected for the pipeline to work.
-- Static analysis finds bugs without executing the code Maven never actually ran your Calculator.java — it just read it. Yet SonarQube still caught the divide-by-zero risk and the SQL injection vulnerability. This is what "static analysis" means in practice — the tool reads your code the way a senior developer would during a code review, spotting patterns that are known to cause problems.
-- The Quality Gate is what connects code quality to deployment The Jenkinsfile you wrote has waitForQualityGate abortPipeline: true — meaning if your code fails the gate, the pipeline stops and nothing gets deployed. This is the practical enforcement mechanism. Without it, SonarQube is just a report nobody reads. With it, bad code physically cannot reach production.
-- Technical debt is measurable, not just a feeling Before this lab, "bad code" was vague. SonarQube put a number on it — approximately 2 hours of estimated fix time. This is how real engineering teams justify refactoring work to managers: not "the code feels messy" but "we have 14 hours of technical debt accumulating at 2 hours per sprint."
-- The fix-and-rescan cycle is the actual workflow When you fixed the divide-by-zero bug and re-ran mvn sonar:sonar, the bug count dropped on the dashboard immediately. This is exactly how developers use SonarQube in real jobs — write code, push it, scanner runs in CI, you get a report, you fix issues, you push again, the gate turns green. The tool only has value if you close the loop, which you demonstrated by doing the rescan.
-
-Link: [Experiment 10 - SonarQube: Continuous Code Quality Inspection](./Experiment-10/)
-
----
-## Experiment 11 — Docker Orchestration
-This experiment successfully demonstrated the transition from basic multi-container management using **Docker Compose** to production-grade **container orchestration using Docker Swarm**.
- 
-The core limitations of Docker Compose — manual scaling, no fault tolerance, and single-host restriction — were directly addressed by Swarm's orchestration layer. By deploying the same `docker-compose.yml` file as a Swarm stack, we achieved:
- 
-- **Automatic scaling** with a single command, managed by an internal load balancer
-- **Self-healing** that required zero operator intervention when a container failed
-- **Rolling updates** that kept the application live during image refreshes
-- **Overlay networking** that enabled secure service-to-service communication across potential multi-node clusters
-The experiment also highlighted the practical trade-offs in the orchestration spectrum. Docker Compose remains the ideal tool for local development due to its simplicity, while Docker Swarm bridges the gap toward production with manageable complexity. For large-scale deployments requiring advanced features like auto-scaling, fine-grained resource management, and cross-cloud federation, **Kubernetes** remains the industry standard next step.
- 
-In summary, Docker Swarm demonstrated that orchestration is not just about running containers — it is about maintaining a **desired state** reliably, automatically, and at scale, regardless of individual container failures.
-
-Link: [Experiment 11 - Docker Orchestration](./Experiment-11/)
-
----
-## Experiment 12 — Container Orchestration using Kubernetes
-This experiment gave a real-world, end-to-end understanding of Kubernetes far beyond theory.
-
-Starting from basic concepts, I deployed WordPress using proper YAML manifests, exposed it through a Service, scaled it horizontally, and demonstrated self-healing. The Apache practical covered the full application lifecycle — from raw pod to managed deployment with debugging and live content modification.
-
-Part D elevated the experiment to a production-style setup: three Ubuntu VMs joined into a real kubeadm cluster with a proper control plane, Calico networking, and worker nodes — the same architecture used in real companies.
-
-The bonus operations — rolling updates, rollbacks, metrics, namespaces, ConfigMaps, and YAML exports — show production-readiness beyond what the lab sheet required.
-
-**Biggest takeaways:**
-- Kubernetes is not just a container runner — it is a full platform for managing application lifecycle
-- Self-healing, scaling, and rollbacks make it genuinely production-grade
-- The gap between theory and hands-on understanding is enormous — this lab closed that gap
-
-
-Link: [Experiment 12 - Container Orchestration using Kubernetes](./Experiment-12/)
-
----
-## Assignments Included
-
-### Assignment 1 - Containerized Web Application with PostgreSQL using Docker Compose and IPVLAN
-- Containerized web application service
-- PostgreSQL database container
-- Service orchestration using Docker Compose
-- Custom IPVLAN network configuration
-- Persistent database storage using volumes
-- Isolated and efficient container networking
-- Easy setup and reproducible environment
-
-Link: [Assignment 1 - Containerized Web Application with PostgreSQL using Docker Compose and IPVLAN](./Assignment-1)
-
----
-### Assignment 2 - Presentation on DevOps Team & Collaborations
-- Presentation assignment on DevOps team culture, structure, and collaboration
-- Covers why the classic Dev vs Ops silo model fails and what replaces it
-- Goes from theory (team models, roles, DORA metrics) to real-world proof (Netflix)
-- Built around the idea that DevOps is a culture shift, not a toolset
-
-Link: [Assignment 2 - Presentation on DevOps Team & Collaborations](./Assignment-2)
-
----
-
-## Class Practicals Included
-
-### Class Practical — 21 January (DevOps Fundamentals & Setup)
-A date-wise practical session focused on understanding and implementing core DevOps foundations through hands-on exercises using:
-- Linux Environment
-- Basic Shell Commands
-- Docker Introduction
-- Container Execution
-- DevOps Workflow Setup
-
-Link:
-[Class Practical 21 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/21%20Jan%20Readme.md)
-
----
-
-### Class Practical — 22 January (Docker Basics & Container Management)
-A date-wise practical session focused on exploring Docker core concepts and managing containers through hands-on classroom implementation using:
-- Docker CLI Commands
-- Container Lifecycle Operations
-- Image Pulling and Execution
-- Basic Container Monitoring
-- Practical DevOps Environment Setup
-
-Link:
-[Class Practical 22 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/22%20Jan%20Readme.md)
-
----
-
-### Class Practical — 23 January (Docker Networking & Multi-Container Basics)
-A date-wise practical session focused on understanding Docker networking concepts and working with multiple containers through hands-on classroom exercises using:
-- Docker Network Commands
-- Bridge Networking Mode
-- Container-to-Container Communication
-- Port Mapping and Exposure
-- Multi-Service Deployment Basics
-
-Link:
-[Class Practical 23 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/23%20Jan%20Readme.md)
-
-
----
-
-### Class Practical — 27 January (Docker Volumes & Persistent Storage)
-A date-wise practical session focused on understanding Docker data persistence concepts and managing storage using hands-on classroom implementation through:
-- Docker Volume Creation
-- Persistent Data Handling
-- Bind Mounts vs Volumes
-- Container Storage Management
-- Practical Stateful Container Setup
-
-Link:
-[Class Practical 27 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Jan%20Readme.md)
-
----
-
-### Class Practical — 28 January (Docker Compose & Multi-Service Deployment)
-A date-wise practical session focused on learning Docker Compose and deploying multi-container applications through structured classroom exercises using:
-- Docker Compose YAML Configuration
-- Multi-Container Service Setup
-- Container Orchestration Basics
-- Automated Service Deployment
-- DevOps Application Structuring
-
-Link:
-[Class Practical 28 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/28%20Jan%20Readme.md)
-
----
-
-### Class Practical — 30 January (Dockerfile Creation & Image Building)
-A date-wise practical session focused on understanding Dockerfile instructions and building custom Docker images through hands-on classroom implementation using:
-- Dockerfile Syntax and Commands
-- Custom Image Creation
-- Layer-Based Image Architecture
-- Building and Running Containers from Images
-- DevOps Application Packaging Workflow
-
-Link:
-[Class Practical 30 Jan](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/30%20Jan%20Readme.md)
-
----
-
-### Class Practical — 3 Feb (Docker Installation Verification & Nginx Deployment)
-A practical session focused on verifying Docker Desktop setup, testing Docker Engine connectivity through CLI and REST API, and deploying a production-ready Nginx container through hands-on implementation using:
-- Docker Installation Verification (macOS Apple Silicon)
-- Docker Engine & Daemon Connectivity Testing
-- Docker CLI and REST API Container Inspection
-- Unix Socket Communication with Docker Engine
-- Nginx Container Pulling and Deployment
-- Container Lifecycle Understanding (Create, Run, Inspect)
-- DevOps Container Deployment Workflow
-
-Link:
-[Class Practical 3 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/3%20Feb%20Readme.md)
-
----
-
-### Class Practical — 4 Feb (Docker Engine Configuration & Remote API Access)
-A hands-on practical session focused on configuring Docker Engine, enabling Remote API communication, and validating daemon connectivity through CLI and UNIX socket testing using:
-- Docker Engine Configuration using daemon.json
-- Docker Remote API Enablement (TCP + UNIX Socket)
-- Docker Installation & Engine Status Verification
-- Docker CLI and CURL-Based API Testing
-- Docker Daemon Connectivity Validation
-- Sample Container Deployment (hello-world)
-- Docker Client–Server Architecture Understanding
-- DevOps Engine-Level Configuration Workflow
-  
-Link:
-[Class Practical 4 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/4%20Feb%20Readme.md)
-
----
-
-### Class Practical Test — 5 Feb (Containerizing Python SAP ID Verification Application)
-A hands-on class test focused on containerizing a Python-based SAP ID verification application using Docker, demonstrating real-world application packaging and execution inside containers through implementation using:
-- Official Docker Base Image (Python 3.10 Slim)
-- Python Application Containerization Workflow
-- Dependency Installation inside Container (NumPy)
-- Custom Docker Image Building
-- Interactive Container Execution
-- Application Testing inside Container Environment
-- Image vs Container Concept Understanding
-- DevOps Application Packaging and Deployment Workflow
-
-Link:
-[Class Practical Test 5 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/5%20Feb(Class%20Test)%20Readme.md)
-
----
-
-### Class Practical — 6 Feb (Running Python Application Using Docker Volume Mount (Continuous Runtime))
-A hands-on practical session focused on executing a containerized Python application using Docker volume mounting for dynamic runtime execution, demonstrating real-world development workflow through implementation using:
-- Official Docker Base Image (Python 3.10 Slim)
-- Docker Volume Mounting (Host ↔ Container File Sharing)
-- Runtime File Injection without Image Rebuild
-- Continuous Input Execution using While Loop
-- Interactive Container Runtime Testing
-- Runtime Error Debugging (Missing File Handling)
-- COPY vs Volume Mount Concept Understanding
-- Real-World Containerized Development Workflow
-  
-Link:
-[Class Practical 6 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Readme.md)
-
----
-
-### Class Practical — 6 Feb Assignment (Running C Application Using Docker Volume Mount (Runtime Compilation & Continuous Execution))
-A hands-on practical session focused on compiling and running a containerized C application using Docker volume mounting for dynamic runtime execution, demonstrating multi-language container workflows through implementation using:
-- Official Docker Base Image (GCC Latest)
-- Containerized C Program Compilation and Execution
-- Docker Volume Mounting (Host ↔ Container File Sharing)
-- Runtime Source Code Injection without Image Rebuild
-- Continuous Input Execution using Infinite Loop
-- Interactive Container Runtime Testing
-- Build-Time vs Runtime Compilation Understanding
-- Multi-Language Containerized Development Workflow
-
-Link:
-[Class Practical 6 Feb Assignment](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Assignment%20Readme.md)
-
----
-
-### Class Practical — 10 Feb (C Application Containerization & Optimization)
-A hands-on practical series focused on building, running, and optimizing containerized C applications using Docker. This included runtime execution using volume mounts and production-level image optimization using multi-stage builds and minimal scratch runtime images. The practical demonstrated real-world container development workflows through implementation using:
-- Official Docker Base Images (Ubuntu, GCC Toolchain)
-- Containerized C Program Compilation and Execution
-- Docker Volume Mounting (Host ↔ Container Runtime Source Injection)
-- Runtime Compilation and Continuous Execution using Infinite Loop
-- Interactive Container Testing using Terminal Input
-- Build-Time vs Runtime Execution Understanding
-- Multi-Stage Docker Build Optimization
-- Static Binary Compilation for Minimal Containers
-- Scratch-Based Ultra-Lightweight Production Images
-- Multi-Language Containerized Development Workflow (Python + C)
-
-Link:
-[Class Practical 10 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Readme.md)
-
----
-
-### Class Practical — 10 Feb Assignment (Multi-Stage Build for Java Application with Secure Runtime Container)
-A hands-on practical session focused on implementing enterprise-grade Docker container build workflows using multi-stage builds for Java applications. This practical demonstrated real-world production container optimization by separating build and runtime environments, reducing image size, and improving container security using non-root user implementation through execution using:
-- Docker Engine & Environment Verification (docker --version, docker ps, docker images)
-- Java Project Structure Creation Using Maven Standards
-- Java Application Compilation Using Maven Build Tool
-- Multi-Stage Dockerfile Implementation (Builder Stage + Runtime Stage)
-- Builder Environment Using Maven + OpenJDK for Application Compilation
-- Runtime Environment Using Production-Ready Eclipse Temurin JRE Base Image
-- Copying Only Compiled Application Artifacts (JAR) to Runtime Container
-- Secure Container Execution Using Non-Root User Configuration
-- Docker Image Build Using Multi-Stage Optimization
-- Docker Image Size Verification and Runtime Optimization Comparison 
-- Running Java Application Inside Optimized Runtime Container
-- Docker Image Layer Analysis Using docker history Command
-- Understanding Builder Layer Removal in Final Runtime Image
-- BuildKit Layer Caching and Container Layer Optimization Understanding
-- Production Container Security and Enterprise Container Design Workflow
-
-Link:
-[Class Practical 10 Feb Assignment](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Assignment%20Readme.md)
-
----
-
-
-### Class Practical — 11 Feb (Docker Volume Management & Data Persistence)
-A hands-on practical session focused on implementing Docker storage mechanisms using named volumes and bind mounts to enable persistent data management between host and container environments. This practical demonstrated real-world container storage workflows through implementation using:
-- Docker Engine & Environment Verification (docker info, docker images)
-- Docker Named Volume Creation and Management
-- Docker Volume Listing and Inspection
-- Running Containers with Named Volumes
-- Container ↔ Volume Data Persistence Testing
-- Writing and Reading Files Inside Container Storage
-- Bind Mount Implementation (Host Directory ↔ Container Directory Mapping)
-- Runtime File Creation and Host-Level Verification
-- Temporary Container Execution using --rm
-- Linux File System Navigation Inside Containers
-- Container Data Lifecycle and Persistence Understanding
-- Real-World DevOps Storage Workflow Implementation
-
-Link:
-[Class Practical 11 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Readme.md)
-
----
-
-
-### Class Practical — 11 Feb Assignment (Volume Backup, Restore & Inspection Using TAR & Named Volumes)
-A hands-on practical session focused on implementing advanced Docker storage management by performing volume data backup, restoration, and inspection using TAR-based archival and named Docker volumes. This practical demonstrated real-world container storage backup and disaster recovery workflows through implementation using:
-- Docker Engine & Environment Verification (docker --version, docker info, docker volume ls)
-- Docker Named Volume Creation and Management
-- Running Containers with Named Volumes for Persistent Storage
-- Writing and Verifying Data Inside Docker Volume Storage
-- Volume Data Backup Using TAR Archive Utility
-- Bind Mount Backup Directory Implementation (Host ↔ Container Mapping)
-- Volume Deletion to Simulate Production Data Loss Scenario
-- Volume Recreation and Data Restoration from Backup Archive
-- Restored Data Verification Inside Container Environment
-- Docker Volume Metadata Inspection Using docker volume inspect
-- Backup Storage Size Verification Using Linux Disk Usage Commands
-- Understanding Docker Volume Mountpoints and Storage Locations
-- Container Storage Backup and Disaster Recovery Workflow Simulation
-- Real-World DevOps Storage Backup and Recovery Implementation
-  
-Link:
-[Class Practical 11 Feb Assignment](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Assignment%20Readme.md)
-
----
-
-### Class Practical — 12 Feb (Docker Volumes, Bind Mounts, tmpfs & MySQL Persistence)
-This class focused on understanding Docker storage mechanisms by working with named volumes, bind mounts, and tmpfs mounts, along with implementing persistent storage for a MySQL container.
-- Verified Docker setup using docker info
-- Created a named Docker volume (myvolume)
-- Ran a MySQL container with volume-based persistent storage
-- Stopped and removed the container to verify data persistence
-- Re-ran MySQL using the same volume to confirm database recovery
-- Inspected volume details using docker volume inspect
-- Implemented Bind Mount with NGINX for live file sharing
-- Demonstrated tmpfs mount for temporary in-memory storage
-- Compared Volume vs Bind Mount vs tmpfs behavior
-
-
-Link:
-[Class Practical 12 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/12%20Feb%20Readme.md)
-
----
-
-
-### Class Practical — 18 Feb (Docker Networking — Bridge, Custom Network & Container Communicatione)
-This class focused on understanding Docker networking concepts by working with default bridge networks, creating custom user-defined bridge networks, and enabling inter-container communication.
-- Inspected default Docker networks (bridge, host, none)
-- Analyzed network configuration using docker network inspect
-- Created a custom bridge network (my_bridge)
-- Launched multiple containers (nginx, busybox) inside the same network
-- Verified container-to-container communication using ping
-- Inspected container network settings and IP assignments
-- Tested host network mode behavior
-- Observed networking differences between default and user-defined bridge networks
-
-Link:
-[Class Practical 18 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Feb%20Readme.md)
-
----
-
-### Class Practical — 20 Feb (Docker Swarm & Advanced Networking Lab — Bridge, Overlay, Services & Macvlan)
-This lab focused on understanding Docker networking from basic container communication to advanced Swarm-based networking, including overlay networks, service scaling, and macvlan configuration.
-- Created a custom bridge network (my_app_net)
-- Launched multiple containers (nginx, alpine) inside the same network
-- Verified container-to-container communication using ping and wget
-- Initialized Docker Swarm using docker swarm init
-- Created an attachable overlay network (my_overlay)
-- Deployed standalone containers inside overlay network and tested connectivity
-- Created a Docker service (web) and exposed it on port 8080
-- Scaled service to 4 replicas using docker service scale
-- Inspected running services and tasks using docker service ls and docker service ps
-- Created a production overlay network (prod_net)
-- Configured a macvlan network with custom subnet and gateway
-- Assigned a static IP to a container using macvlan
-- Tested external connectivity using curl
-- Troubleshot port conflicts and active endpoint issues
-- Compared bridge, overlay, host, and macvlan networking behavior
-
-Link:
-[Class Practical 20 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Feb%20Readme.md)
-
----
-
-
-### Class Practical — 25 Feb (Docker Compose – Nginx & WordPress with MySQL)
-This class practical successfully demonstrated the working of Docker Compose for both single-container and multi-container applications. Using Docker Compose:
-- Multiple services can be managed using a single YAML file.
-- Networking between containers is automatically handled.
-- Persistent storage can be managed easily using volumes.
-- Full application stack (WordPress + MySQL) can be deployed with a single command.
-- Docker Compose makes container orchestration simple, structured, and efficient for real-world application deployment.
-
-Link:
-[Class Practical 25 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Feb%20Readme.md)
-
----
-
-
-### Class Practical — 26 Feb (Scaling Services using Docker Compose)
-This experiment demonstrated how Docker Compose can scale services easily using the --scale flag.
-- It also highlighted important practical constraints:
-- Each container must have a unique name.
-- Only one container can bind to a specific host port.
-- Scaling backend services usually requires a load balancer.
-- Docker Compose simplifies multi-container orchestration and service replication, making it useful for real-world distributed application deployment.
-
-Link:
-[Class Practical 26 Feb](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/26%20Feb%20Readme.md)
-
----
-
-### Class Practical — 18 Mar (Kubernetes Setup using k3d (Mac M1))
-The Kubernetes environment was successfully set up on Mac M1 using Docker, k3d, and kubectl.
-The following outcomes were achieved:
-- A local Kubernetes cluster (mycluster) was created using k3d.
-- The cluster node status was verified using kubectl get nodes and was in Ready state.
-- An Nginx deployment was successfully created in the cluster.
-- Pods were automatically generated and managed by the deployment.
-- The deployment was exposed using a NodePort service.
-- The deployment was scaled to multiple replicas, demonstrating Kubernetes scaling capability.
-- Pod logs and details were verified using kubectl logs and kubectl describe.
-- All Kubernetes components worked correctly and the application was successfully deployed and managed inside the cluster.
-
-
-Link:
-[Class Practical 18 Mar](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Mar%20Readme.md)
-
----
-
-### Class Practical — 19 Mar (Kubernetes Deployment & Service Exposure (k3d))
-This practical demonstrated:
-- Deployment creation
-- Pod management
-- Scaling of applications
-- Service exposure
-- Debugging using logs
-- Kubernetes successfully handled container orchestration and service management.
-
-
-Link:
-[Class Practical 19 Mar](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/19%20Mar%20readme.md)
-
----
-
-### Class Practical — 20 Mar (Docker & Portainer Setup (Mac M1) – Practical)
-This practical demonstrated:
-- Limitations of Minikube on Mac M1
-- Docker container management
-- Deployment of Portainer for GUI-based management
-- Real-time monitoring of containers
-- Portainer simplifies Docker operations and provides an efficient interface for container orchestration.
-
-
-Link:
-[Class Practical 20 Mar](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Mar%20Readme.md)
-
----
-
-
-### Class Practical — 25 Mar Task (Apache Web App)
-This practical demonstrates:
-- Apache app successfully deployed
-- Accessed via browser
-- Scaled to multiple replicas
-- Debugged broken deployment
-- Modified live container content
-
-Link:
-[Class Practical 25 Mar Task](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Mar%20Task%20Readme.md)
-
----
-
-
-### Class Practical — 27 Mar Task (Imperative vs Declarative Deployment)
- This Practical demonstrates:
-- Deployment created successfully
-- Pods were running correctly
-- Application accessible via browser
-- Scaling operation verified
-
-Link:
-[Class Practical 27 Mar Task](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Mar%20Task%20Readme.md)
-
----
-
-### Class Practical — 1 Apr (Jenkins on Docker)
-This class practical successfully demonstrates the deployment of Jenkins inside a Docker container on Apple Silicon hardware. By leveraging Docker's multi-platform support and Docker Compose for service orchestration, a production-ready Jenkins CI/CD server was configured with minimal infrastructure overhead.
-
-- Docker images may not natively support ARM architecture; the `platform` flag enables emulation
-- Port conflicts are common in local development setups and can be resolved by remapping host ports
-- Named volumes ensure Jenkins data persistence across container lifecycles
-- Jenkins initial setup is straightforward, but debugging container and networking issues requires familiarity with Docker fundamentals
-
-Link:
-[Class Practical 1 Apr](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/1%20Apr%20Readme.md)
-
----
-
-### Class Practical — 7 Apr (Git & GitHub SSH Setup)
-This project documents the end-to-end process of setting up Git version control and GitHub SSH authentication on a Mac, creating a local repository, working with branches, and pushing code to a remote GitHub repository.
-
-- The repository is set to Private on GitHub.
-- SSH authentication was used instead of HTTPS for secure, password-free pushes.
-- The feature-branch contains authentication feature work.
-
-Link:
-[Class Practical 7 Apr](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/7%20Apr%20Readme.md)
-
----
-
-### Class Practical — 9 Apr (Git Practical)
-This practical session walked through core Git workflows: cloning a remote repo, making commits, working with branches, and understanding how Git tracks changes.
-
-- Setup & Cloning
-- Basic Commits
-- Renaming Branches
-- Modifying Files & Staging
-- Branching & Feature Work
-- Merging
-- Branch Summary
-
-Link:
-[Class Practical 9 Apr](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/9%20Apr%20Readme.md)
-
----
-### Class Practical — 10 Apr Task (Dockerize a Python FastAPI server, automate build & push to Docker Hub using GitHub Actions)
-Continuous Delivery (CD) is a DevOps practice where code changes are:
-- Automatically built
-- Automatically tested
-- Automatically prepared for release
-
-I now have validated a complete pipeline:
-
-- Code Change → Git Push → GitHub Actions → Docker Build → Docker Push → Local Run → Verified Output
-
-
-Link:
-[Class Practical — 10 Apr Task](https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Apr%20Task%20Readme.md)
-
----
-
-
-## Topics Covered
-
-This repository includes both theoretical understanding and hands-on implementation of:
-
----
-
-### Containerization (Docker)
-
-- Introduction to containerization  
-- Virtual Machines vs Containers  
-- Docker architecture and components  
-- Working with Docker images and containers  
-- Writing Dockerfiles  
-- Essential Docker commands:
-
-  - `docker build`  
-  - `docker run`  
-  - `docker ps`  
-  - `docker exec`  
-  - `docker logs`  
-  - `docker stop`  
-
-- Docker networking and storage volumes  
-- Introduction to Docker Compose  
-
----
-
-## Academic Declaration
-This repository is maintained as part of my official college coursework submission.
-All practical work has been performed, documented, and organized according to university laboratory requirements under the subject:
-Containerization and DevOps
-
-## Submission Note
-Each experiment folder contains:
-- Objective
-- Procedure and commands
-- Output screenshots
-- Observations
-- Conclusion
-This repository serves as a complete academic record of my practical learning.
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Containerization & DevOps — saumil mishra</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020408;
+  --bg2:#060d14;
+  --bg3:#0a1520;
+  --bg4:#0e1d2a;
+  --border:rgba(0,212,255,0.08);
+  --border2:rgba(0,212,255,0.18);
+  --border3:rgba(0,212,255,0.35);
+  --text:#e2f4ff;
+  --muted:#5a8a9f;
+  --muted2:#8ab4c8;
+  --cyan:#00d4ff;
+  --cyan2:#00a8d4;
+  --green:#00ff88;
+  --green2:#00cc6a;
+  --purple:#b44fff;
+  --orange:#ff8c00;
+  --red:#ff4060;
+  --yellow:#ffd700;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Courier New',Courier,monospace;
+  font-size:14px;line-height:1.6;overflow-x:hidden;
+}
+
+/* ── SCANLINES OVERLAY ── */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
+}
+
+/* ── CANVAS ── */
+#matrix-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.07}
+#circuit-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.15}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:60px 24px 80px;text-align:center;
+  overflow:hidden;
+}
+.hero-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%,rgba(0,212,255,0.06) 0%,transparent 70%),
+    radial-gradient(ellipse 40% 30% at 20% 80%,rgba(0,255,136,0.04) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 10%,rgba(180,79,255,0.04) 0%,transparent 60%);
+}
+
+/* terminal window */
+.terminal-window{
+  width:100%;max-width:720px;
+  border:1px solid var(--border2);border-radius:8px;
+  background:rgba(6,13,20,0.95);
+  margin-bottom:40px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(0,212,255,0.08),0 0 80px rgba(0,212,255,0.04);
+}
+.terminal-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;
+  background:rgba(0,212,255,0.05);
+  border-bottom:1px solid var(--border);
+}
+.t-dot{width:12px;height:12px;border-radius:50%}
+.terminal-title{flex:1;text-align:center;font-size:11px;color:var(--muted);letter-spacing:1px}
+.terminal-body{padding:20px;text-align:left;font-size:13px;line-height:1.9}
+.t-line{display:flex;gap:8px;align-items:flex-start;margin-bottom:2px}
+.t-prompt{color:var(--green);flex-shrink:0}
+.t-cmd{color:var(--cyan)}
+.t-out{color:var(--muted2);padding-left:16px}
+.t-val{color:var(--yellow)}
+.t-comment{color:rgba(90,138,159,0.6)}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--cyan);animation:blink-cursor 1s steps(1) infinite;vertical-align:middle}
+@keyframes blink-cursor{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+.hero-eyebrow{
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:16px;
+  text-shadow:0 0 20px rgba(0,212,255,0.5);
+}
+
+.hero-title{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:clamp(36px,6vw,72px);
+  font-weight:900;line-height:1.05;letter-spacing:-2px;
+  margin-bottom:8px;
+}
+.hero-title .w1{
+  display:block;
+  background:linear-gradient(90deg,var(--cyan),var(--white) 40%,var(--cyan));
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shine 4s linear infinite;
+}
+.hero-title .w2{
+  display:block;
+  background:linear-gradient(90deg,var(--green),var(--cyan) 50%,var(--purple));
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shine 3s linear infinite reverse;
+}
+@keyframes shine{0%{background-position:0% center}100%{background-position:200% center}}
+
+.hero-sub{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:15px;color:var(--muted2);max-width:560px;margin:20px auto 36px;line-height:1.7;
+}
+
+/* glitch badge */
+.glitch-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(0,212,255,0.05);
+  border:1px solid var(--border2);
+  padding:8px 20px;border-radius:4px;
+  font-size:11px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:40px;position:relative;overflow:hidden;
+}
+.glitch-badge::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,0.12),transparent);
+  animation:sweep 3s ease-in-out infinite;
+}
+@keyframes sweep{0%{left:-100%}100%{left:150%}}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 0 rgba(0,255,136,0.4);animation:ripple 2s infinite}
+@keyframes ripple{0%{box-shadow:0 0 0 0 rgba(0,255,136,0.4)}70%{box-shadow:0 0 0 8px rgba(0,255,136,0)}100%{box-shadow:0 0 0 0 rgba(0,255,136,0)}}
+
+/* stats HUD */
+.hud{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:0;
+  border:1px solid var(--border2);border-radius:6px;
+  overflow:hidden;background:rgba(0,212,255,0.03);
+  max-width:600px;margin:0 auto;
+}
+.hud-cell{
+  padding:18px 36px;text-align:center;
+  border-right:1px solid var(--border);
+  position:relative;
+}
+.hud-cell:last-child{border-right:none}
+.hud-cell::before{
+  content:attr(data-label);
+  display:block;font-size:9px;color:var(--cyan);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;
+}
+.hud-val{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:30px;font-weight:900;letter-spacing:-1px;
+  color:var(--white);text-shadow:0 0 20px rgba(0,212,255,0.4);
+}
+.hud-unit{font-size:12px;color:var(--cyan);margin-left:2px}
+
+.scroll-pulse{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+}
+.scroll-chevrons{display:flex;flex-direction:column;gap:2px;align-items:center}
+.ch{
+  width:14px;height:14px;border-right:1.5px solid;border-bottom:1.5px solid;
+  transform:rotate(45deg);
+}
+.ch:nth-child(1){border-color:rgba(0,212,255,0.2);animation:fade-ch 1.5s 0s infinite}
+.ch:nth-child(2){border-color:rgba(0,212,255,0.5);animation:fade-ch 1.5s 0.15s infinite}
+.ch:nth-child(3){border-color:rgba(0,212,255,0.8);animation:fade-ch 1.5s 0.3s infinite}
+@keyframes fade-ch{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* ── MAIN ── */
+main{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 24px 100px}
+
+/* ── SECTION HEADER ── */
+.sec-head{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:36px;
+}
+.sec-head-left{
+  display:flex;align-items:center;gap:12px;flex-shrink:0;
+}
+.sec-number{
+  font-size:9px;color:var(--cyan);letter-spacing:2px;
+  border:1px solid var(--border2);padding:3px 8px;border-radius:2px;
+}
+.sec-name{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:20px;font-weight:800;color:var(--white);letter-spacing:-0.3px;
+}
+.sec-name span{color:var(--cyan)}
+.sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent)}
+.sec-count{
+  font-size:10px;color:var(--cyan);letter-spacing:1px;
+  border:1px solid var(--border);padding:3px 10px;border-radius:20px;
+  background:rgba(0,212,255,0.04);flex-shrink:0;
+}
+
+/* ── EXP CARDS ── */
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
+
+.exp-card{
+  position:relative;
+  background:rgba(6,13,20,0.9);
+  border:1px solid var(--border);
+  border-radius:6px;padding:0;
+  text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
+  cursor:pointer;
+  transform-style:preserve-3d;
+}
+.exp-card:hover{
+  border-color:var(--card-accent,var(--cyan));
+  box-shadow:0 0 30px rgba(var(--card-glow,0,212,255),0.12),0 0 60px rgba(var(--card-glow,0,212,255),0.06);
+  transform:translateY(-4px);
+}
+
+/* accent bar */
+.exp-bar{height:2px;background:var(--card-accent,var(--cyan));opacity:0.7;transition:opacity 0.3s}
+.exp-card:hover .exp-bar{opacity:1}
+
+/* card inner */
+.exp-inner{padding:24px;flex:1;display:flex;flex-direction:column}
+
+.exp-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.exp-num-badge{
+  font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--card-accent,var(--cyan));
+  border:1px solid currentColor;padding:3px 10px;border-radius:2px;
+  opacity:0.8;
+}
+.exp-icon{
+  width:40px;height:40px;border-radius:6px;
+  border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+  background:rgba(0,212,255,0.04);
+  transition:background 0.3s;
+}
+.exp-card:hover .exp-icon{background:rgba(0,212,255,0.08)}
+
+.exp-card h3{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;font-weight:700;color:var(--white);
+  line-height:1.35;margin-bottom:10px;
+}
+.exp-card p{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:12.5px;color:var(--muted2);line-height:1.65;
+  flex:1;margin-bottom:20px;
+}
+
+/* code snippet */
+.exp-snippet{
+  background:rgba(0,0,0,0.4);border:1px solid var(--border);
+  border-radius:4px;padding:10px 14px;margin-bottom:18px;
+  font-size:11px;color:var(--green);line-height:1.6;
+  overflow:hidden;
+}
+.exp-snippet .ps{color:var(--cyan);margin-right:6px}
+.exp-snippet .cmd{color:var(--yellow)}
+.exp-snippet .flag{color:var(--purple)}
+.exp-snippet .arg{color:var(--muted2)}
+
+.exp-footer{display:flex;align-items:center;justify-content:space-between}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-size:10px;font-weight:700;letter-spacing:0.5px;
+  padding:3px 9px;border-radius:3px;border:1px solid;font-family:inherit;
+}
+.tag-cyan{background:rgba(0,212,255,0.07);color:#00d4ff;border-color:rgba(0,212,255,0.2)}
+.tag-green{background:rgba(0,255,136,0.07);color:#00ff88;border-color:rgba(0,255,136,0.2)}
+.tag-purple{background:rgba(180,79,255,0.07);color:#b44fff;border-color:rgba(180,79,255,0.2)}
+.tag-orange{background:rgba(255,140,0,0.07);color:#ff8c00;border-color:rgba(255,140,0,0.2)}
+.tag-red{background:rgba(255,64,96,0.07);color:#ff4060;border-color:rgba(255,64,96,0.2)}
+.tag-yellow{background:rgba(255,215,0,0.07);color:#ffd700;border-color:rgba(255,215,0,0.2)}
+.tag-gray{background:rgba(90,138,159,0.07);color:#8ab4c8;border-color:rgba(90,138,159,0.2)}
+
+.exp-link-btn{
+  display:flex;align-items:center;gap:6px;
+  font-size:10px;color:var(--card-accent,var(--cyan));
+  letter-spacing:1px;text-transform:uppercase;
+  border:1px solid currentColor;padding:5px 12px;border-radius:3px;
+  opacity:0;flex-shrink:0;
+  transition:opacity 0.2s,background 0.2s;
+}
+.exp-card:hover .exp-link-btn{opacity:1}
+.exp-link-btn:hover{background:rgba(0,212,255,0.1)}
+
+/* card color variants */
+.cv-cyan{--card-accent:#00d4ff;--card-glow:0,212,255}
+.cv-green{--card-accent:#00ff88;--card-glow:0,255,136}
+.cv-purple{--card-accent:#b44fff;--card-glow:180,79,255}
+.cv-orange{--card-accent:#ff8c00;--card-glow:255,140,0}
+.cv-red{--card-accent:#ff4060;--card-glow:255,64,96}
+.cv-yellow{--card-accent:#ffd700;--card-glow:255,215,0}
+
+/* ── ASSIGN ── */
+.assign-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:16px}
+.assign-card{
+  position:relative;background:rgba(6,13,20,0.9);
+  border:1px solid rgba(255,140,0,0.15);border-radius:6px;
+  padding:0;text-decoration:none;color:inherit;overflow:hidden;
+  transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
+}
+.assign-card:hover{
+  border-color:rgba(255,140,0,0.4);transform:translateY(-4px);
+  box-shadow:0 0 30px rgba(255,140,0,0.1);
+}
+.assign-inner{padding:28px}
+
+/* ── PRACTICALS ── */
+.month-block{margin-bottom:40px}
+.month-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.month-hex{
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  position:relative;flex-shrink:0;
+}
+.month-hex::before{
+  content:'';position:absolute;inset:0;
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  background:var(--m-color,var(--cyan));opacity:0.15;
+}
+.month-hex-txt{font-size:10px;font-weight:700;color:var(--m-color,var(--cyan));position:relative;z-index:1}
+.month-title{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--m-color,var(--cyan));text-transform:uppercase}
+.month-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--m-color,var(--cyan)),transparent);opacity:0.2}
+
+.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.p-card{
+  background:rgba(6,13,20,0.7);border:1px solid var(--border);
+  border-radius:4px;padding:12px 14px;
+  text-decoration:none;color:inherit;
+  display:flex;align-items:flex-start;gap:10px;
+  transition:border-color 0.2s,background 0.2s,transform 0.15s;
+  position:relative;overflow:hidden;
+}
+.p-card:hover{border-color:var(--m-color,var(--cyan));background:rgba(0,212,255,0.03);transform:translateY(-1px)}
+.p-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--m-color,var(--cyan));opacity:0;transition:opacity 0.2s;
+}
+.p-card:hover::before{opacity:1}
+.p-num{
+  font-size:9px;color:var(--m-color,var(--cyan));letter-spacing:1px;
+  margin-bottom:3px;font-weight:700;text-transform:uppercase;
+}
+.p-ttl{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:12px;color:var(--text);font-weight:500;line-height:1.4;
+}
+.p-dot-col{width:6px;height:6px;border-radius:50%;background:var(--m-color,var(--cyan));margin-top:5px;flex-shrink:0;opacity:0.6}
+.p-arr{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--muted);opacity:0;transition:opacity 0.2s}
+.p-card:hover .p-arr{opacity:1}
+
+/* ── TECH MATRIX ── */
+.tech-matrix{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;
+}
+.tech-item{
+  background:rgba(0,0,0,0.4);border:1px solid var(--border);
+  border-radius:4px;padding:10px 14px;
+  display:flex;align-items:center;gap:8px;
+  transition:border-color 0.2s,background 0.2s;cursor:default;
+  position:relative;overflow:hidden;
+}
+.tech-item:hover{border-color:var(--t-col,var(--cyan));background:rgba(0,212,255,0.04)}
+.tech-item::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:var(--t-col,var(--cyan));opacity:0;transition:opacity 0.2s;
+}
+.tech-item:hover::after{opacity:0.5}
+.tech-dot{width:5px;height:5px;border-radius:50%;background:var(--t-col,var(--cyan));flex-shrink:0}
+.tech-name{font-size:11px;font-weight:700;color:var(--text);letter-spacing:0.3px}
+
+/* ── FOOTER ── */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid var(--border);padding:48px 24px;
+}
+.footer-inner{max-width:900px;margin:0 auto}
+.footer-term{
+  background:rgba(6,13,20,0.9);border:1px solid var(--border2);
+  border-radius:6px;padding:24px;margin-bottom:24px;
+  font-size:12px;line-height:2;
+}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:11px;color:var(--muted);letter-spacing:0.5px}
+.footer-link{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--cyan);text-decoration:none;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  border:1px solid var(--border2);padding:8px 20px;border-radius:3px;
+  transition:all 0.2s;background:rgba(0,212,255,0.03);
+}
+.footer-link:hover{background:rgba(0,212,255,0.08);border-color:var(--cyan)}
+
+@media(max-width:700px){
+  .hero-title{font-size:34px;letter-spacing:-1px}
+  .hud-cell{padding:14px 20px}
+  main{padding:48px 16px 60px}
+  .exp-grid,.assign-grid,.tech-matrix{grid-template-columns:1fr}
+  .p-grid{grid-template-columns:1fr}
+  .terminal-window{display:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+<canvas id="circuit-canvas"></canvas>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+<div class="hero-glow"></div>
+
+<div class="terminal-window">
+  <div class="terminal-bar">
+    <div class="t-dot" style="background:#ff5f57"></div>
+    <div class="t-dot" style="background:#ffbd2e"></div>
+    <div class="t-dot" style="background:#28ca42"></div>
+    <span class="terminal-title">saumil@devops-lab ~ bash</span>
+  </div>
+  <div class="terminal-body">
+    <div class="t-line"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> cat student_info.json</span></div>
+    <div class="t-line"><span class="t-out">{ <span class="t-val">"name"</span>: <span class="t-val">"saumil mishra"</span>, <span class="t-val">"sap"</span>: <span class="t-val">"500125960"</span> }</span></div>
+    <div class="t-line"><span class="t-out">{ <span class="t-val">"roll"</span>: <span class="t-val">"R2142231932"</span>, <span class="t-val">"batch"</span>: <span class="t-val">"2 CCVT"</span> }</span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> docker ps -a | grep lab</span></div>
+    <div class="t-line"><span class="t-out" style="color:var(--green)">✔ experiments: <span class="t-val">12 RUNNING</span> &nbsp;|&nbsp; practicals: <span class="t-val">28 COMPLETED</span></span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> kubectl get all --namespace=devops-lab</span></div>
+    <div class="t-line"><span class="t-out">STATUS: <span style="color:var(--green)">All systems operational</span> &nbsp;<span class="t-comment">// academic year 2024-25</span></span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="cursor"></span></div>
+  </div>
+</div>
+
+<p class="hero-eyebrow">// Containerization &amp; DevOps — Lab Repository</p>
+<h1 class="hero-title">
+  <span class="w1">CONTAINERIZATION</span>
+  <span class="w2">&amp; DEVOPS LAB</span>
+</h1>
+<p class="hero-sub">Complete academic documentation of Docker, Kubernetes, CI/CD pipelines, Infrastructure as Code, and modern DevOps toolchains — built, tested, and deployed.</p>
+
+<div class="glitch-badge">
+  <span class="live-dot"></span>
+  Academic Submission · B.Tech · 2024–25
+</div>
+
+<div class="hud">
+  <div class="hud-cell" data-label="Experiments"><span class="hud-val">12</span></div>
+  <div class="hud-cell" data-label="Assignments"><span class="hud-val">02</span></div>
+  <div class="hud-cell" data-label="Practicals"><span class="hud-val">28<span class="hud-unit">+</span></span></div>
+  <div class="hud-cell" data-label="Technologies"><span class="hud-val">15<span class="hud-unit">+</span></span></div>
+</div>
+
+<div class="scroll-pulse">
+  <span>Scroll</span>
+  <div class="scroll-chevrons"><div class="ch"></div><div class="ch"></div><div class="ch"></div></div>
+</div>
+</section>
+
+<!-- ═══════════ MAIN ═══════════ -->
+<main>
+
+<!-- ───── EXPERIMENTS ───── -->
+<div class="sec-head">
+  <div class="sec-head-left">
+    <span class="sec-number">01</span>
+    <span class="sec-name">Lab <span>Experiments</span></span>
+  </div>
+  <div class="sec-line"></div>
+  <span class="sec-count">12 modules</span>
+</div>
+
+<div class="exp-grid" style="margin-bottom:80px">
+
+  <a class="exp-card cv-cyan" href="./Experiment-1/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-01</span>
+        <div class="exp-icon">🖥️</div>
+      </div>
+      <h3>Virtual Machines vs Containers</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">vagrant</span> <span class="flag">up</span> <span class="arg">--provider virtualbox</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">run</span> <span class="arg">-p 80:80 nginx:alpine</span></div>
+      </div>
+      <p>Infrastructure showdown — provisioned Ubuntu VMs via Vagrant + VirtualBox and replicated identical services with Docker. Measured isolation, boot time, and resource delta between both paradigms.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-cyan">Vagrant</span><span class="tag tag-cyan">VirtualBox</span><span class="tag tag-gray">Nginx</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-green" href="./Experiment-2/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-02</span>
+        <div class="exp-icon">🐳</div>
+      </div>
+      <h3>Docker Installation &amp; Container Lifecycle</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">pull</span> <span class="arg">nginx</span> <span class="arg">&amp;&amp; docker run -d -p 8080:80</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">stop</span> <span class="arg">$(docker ps -q)</span> <span class="arg">&amp;&amp; docker rm</span></div>
+      </div>
+      <p>Mastered Docker fundamentals — pulling images, port-mapped deployments, diagnosing port conflicts, and the full container start → stop → remove lifecycle from CLI.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-green">Docker CLI</span><span class="tag tag-gray">Port Mapping</span><span class="tag tag-gray">Lifecycle</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-purple" href="./Experiment-3/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-03</span>
+        <div class="exp-icon">📦</div>
+      </div>
+      <h3>Custom Docker Images — Ubuntu &amp; Alpine</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">build</span> <span class="arg">-t nginx-ubuntu:500125960 .</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">build</span> <span class="arg">-t nginx-alpine:500125960 -f</span> <span class="arg">Dockerfile.alpine .</span></div>
+      </div>
+      <p>Built custom Nginx images on both Ubuntu 22.04 and Alpine Linux base. Ran three containers simultaneously on :8080, :8081, :8082 — Alpine came in 90% smaller than Ubuntu.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-purple">Dockerfile</span><span class="tag tag-cyan">Alpine</span><span class="tag tag-gray">Ubuntu</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-orange" href="./Experiment-4/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-04</span>
+        <div class="exp-icon">🚀</div>
+      </div>
+      <h3>Dockerfile, .dockerignore &amp; Docker Hub Push</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">build</span> <span class="arg">--no-cache -t flask-app:prod .</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">push</span> <span class="arg">saumilmishra/flask-app:prod</span></div>
+      </div>
+      <p>Full containerization pipeline: Flask (:5001) + Node.js (:3000). Implemented .dockerignore for security hardening, multi-stage builds to shrink image size, published both to Docker Hub and validated the pull cycle.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-orange">Flask</span><span class="tag tag-green">Node.js</span><span class="tag tag-cyan">Docker Hub</span><span class="tag tag-purple">Multi-stage</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-cyan" href="./Experiment-5/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-05</span>
+        <div class="exp-icon">🌐</div>
+      </div>
+      <h3>Docker Networking, Volumes &amp; Env Variables</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">network create</span> <span class="arg">--driver bridge app-net</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">run</span> <span class="arg">-e DB_PASS=secret -v data:/app/db</span></div>
+      </div>
+      <p>Production config deep-dive — bridge networking, named volume persistence, secret injection via env vars, runtime overrides, and container inspection + log debugging toolchain.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-cyan">Networking</span><span class="tag tag-purple">Volumes</span><span class="tag tag-green">Env Vars</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-green" href="./Experiment-6/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-06</span>
+        <div class="exp-icon">⚙️</div>
+      </div>
+      <h3>Docker Run vs Docker Compose</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker compose</span> <span class="flag">up</span> <span class="arg">-d --build</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker compose</span> <span class="flag">ps</span> <span class="arg">| grep running</span></div>
+      </div>
+      <p>Converted multi-command run workflows into clean YAML Compose definitions. Built single and multi-container apps, explored service dependency ordering and understand when Compose replaces manual container wiring.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-green">Docker Compose</span><span class="tag tag-gray">YAML</span><span class="tag tag-cyan">Orchestration</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-red" href="./Experiment-7/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-07</span>
+        <div class="exp-icon">🔄</div>
+      </div>
+      <h3>CI/CD Pipeline — Jenkins + GitHub + Docker Hub</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">git</span> <span class="flag">push</span> <span class="arg">origin main</span> <span class="t-comment"># triggers webhook</span></div>
+        <div style="color:var(--green)">→ Jenkins build #42 started → Docker push → PASS ✓</div>
+      </div>
+      <p>Fully automated pipeline: GitHub webhook → Jenkins → Docker build → push to Docker Hub. Required a custom ARM64 Jenkins image with embedded Docker CLI to run natively on Mac M1 Apple Silicon.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-red">Jenkins</span><span class="tag tag-gray">Webhooks</span><span class="tag tag-orange">ARM64</span><span class="tag tag-cyan">CI/CD</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-purple" href="./Experiment-9/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-09</span>
+        <div class="exp-icon">🤖</div>
+      </div>
+      <h3>Ansible Automation with Docker</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">ansible-playbook</span> <span class="flag">-i</span> <span class="arg">inventory deploy.yml</span></div>
+        <div style="color:var(--green)">PLAY RECAP: ok=12 changed=4 unreachable=0 failed=0</div>
+      </div>
+      <p>Configured control node + Docker-simulated managed nodes via SSH key auth. Wrote idempotent playbooks using apt, copy, command, debug modules. IaC in practice — same playbook, identical result, every run.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-red">Ansible</span><span class="tag tag-gray">SSH</span><span class="tag tag-green">IaC</span><span class="tag tag-purple">Playbooks</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-yellow" href="./Experiment-10/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-10</span>
+        <div class="exp-icon">🔍</div>
+      </div>
+      <h3>SonarQube: Continuous Code Quality</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">mvn</span> <span class="flag">sonar:sonar</span> <span class="arg">-Dsonar.host.url=http://localhost:9000</span></div>
+        <div style="color:var(--red)">⚠ BUGS: divide-by-zero, SQL injection → GATE: FAIL</div>
+      </div>
+      <p>Static analysis pipeline wired into Jenkins with Quality Gate enforcement. SonarQube caught divide-by-zero and SQL injection by reading code — no execution needed. Technical debt quantified at ~2 hrs. Fix → rescan → gate turns green.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-yellow">SonarQube</span><span class="tag tag-orange">Maven</span><span class="tag tag-green">Quality Gate</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="exp-card cv-cyan" href="./Experiment-11/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-11</span>
+        <div class="exp-icon">🐝</div>
+      </div>
+      <h3>Docker Orchestration — Compose → Swarm</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">docker stack deploy</span> <span class="flag">-c</span> <span class="arg">docker-compose.yml wpstack</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker service scale</span> <span class="arg">wpstack_wordpress=5</span> <span class="t-comment"># instant ✓</span></div>
+      </div>
+      <p>Migrated a WordPress + MySQL stack from Docker Compose to Docker Swarm. Demonstrated production-grade orchestration: auto-scaling 1→5 replicas, self-healing after force-killed containers, rolling updates with zero downtime, and overlay networking across the cluster.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-cyan">Docker Swarm</span><span class="tag tag-green">Self-Healing</span><span class="tag tag-purple">Overlay Net</span><span class="tag tag-gray">Rolling Update</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- ── NEW: EXP-12 ── -->
+  <a class="exp-card cv-purple" href="./Experiment-12/">
+    <div class="exp-bar"></div>
+    <div class="exp-inner">
+      <div class="exp-meta">
+        <span class="exp-num-badge">EXP-12</span>
+        <div class="exp-icon">☸️</div>
+      </div>
+      <h3>Container Orchestration using Kubernetes</h3>
+      <div class="exp-snippet">
+        <div><span class="ps">$</span><span class="cmd">kubectl apply</span> <span class="flag">-f</span> <span class="arg">wordpress-deployment.yaml</span></div>
+        <div><span class="ps">$</span><span class="cmd">kubectl scale</span> <span class="arg">deployment wordpress</span> <span class="flag">--replicas=4</span> <span class="t-comment"># ✓</span></div>
+      </div>
+      <p>Full Kubernetes lifecycle — deployed WordPress via YAML manifests, exposed with NodePort Service, scaled to 4 replicas, demonstrated self-healing, rolling updates, and rollbacks. Built a real 3-node cluster using kubeadm on Ubuntu VMs via Multipass on M1 Mac.</p>
+      <div class="exp-footer">
+        <div class="exp-tags">
+          <span class="tag tag-purple">Kubernetes</span><span class="tag tag-cyan">kubeadm</span><span class="tag tag-green">Self-Healing</span><span class="tag tag-gray">Calico</span>
+        </div>
+        <span class="exp-link-btn">Open ↗</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- ───── ASSIGNMENTS ───── -->
+<div class="sec-head">
+  <div class="sec-head-left">
+    <span class="sec-number">02</span>
+    <span class="sec-name">Lab <span>Assignments</span></span>
+  </div>
+  <div class="sec-line"></div>
+  <span class="sec-count">2 modules</span>
+</div>
+
+<div class="assign-grid" style="margin-bottom:80px">
+
+  <a class="assign-card" href="./Assignment-1/" style="text-decoration:none;color:inherit">
+    <div style="height:2px;background:linear-gradient(90deg,#ff8c00,#ff4060);opacity:0.8"></div>
+    <div class="assign-inner">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px">
+        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,140,0,0.3);padding:3px 10px;border-radius:2px">ASSIGN-01</span>
+        <div style="font-size:22px">🗄️</div>
+      </div>
+      <h3 style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3">Containerized Web App + PostgreSQL via IPVLAN</h3>
+      <div class="exp-snippet" style="margin-bottom:14px">
+        <div><span class="ps">$</span><span class="cmd">docker compose</span> <span class="flag">up</span> <span class="arg">-d --build</span> <span class="t-comment"># ipvlan config</span></div>
+        <div style="color:var(--green)">Network: ipvlan mode l2 | subnet 192.168.1.0/24</div>
+      </div>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;color:var(--muted2);line-height:1.65;margin-bottom:18px">Orchestrated a full-stack application with PostgreSQL using Docker Compose. Configured a custom IPVLAN network for direct physical network integration, named volumes for database durability, and complete service isolation.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span class="tag tag-orange">PostgreSQL</span><span class="tag tag-orange">IPVLAN</span><span class="tag tag-cyan">Docker Compose</span><span class="tag tag-purple">Named Volumes</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="assign-card" href="./Assignment-2/" style="text-decoration:none;color:inherit">
+    <div style="height:2px;background:linear-gradient(90deg,#ff8c00,#ff4060);opacity:0.8"></div>
+    <div class="assign-inner">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px">
+        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,140,0,0.3);padding:3px 10px;border-radius:2px">ASSIGN-02</span>
+        <div style="font-size:22px">📊</div>
+      </div>
+      <h3 style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3">DevOps Team Culture &amp; Collaboration</h3>
+      <div class="exp-snippet" style="margin-bottom:14px">
+        <div style="color:var(--muted2)"><span class="t-comment">// slide deck analysis</span></div>
+        <div><span style="color:var(--yellow)">DORA Metrics</span> <span class="t-comment">→</span> <span style="color:var(--green)">deployment_freq: 4/day | MTTR: 1hr</span></div>
+      </div>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px;color:var(--muted2);line-height:1.65;margin-bottom:18px">Presentation dissecting why Dev vs Ops silos fail. Covered team topologies, DORA metrics as quantifiable proof, and Netflix as a real-world case study. Core argument: DevOps is a culture shift — not a toolset.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <span class="tag tag-orange">Culture</span><span class="tag tag-yellow">DORA Metrics</span><span class="tag tag-gray">Team Topologies</span><span class="tag tag-gray">Netflix Case</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- ───── PRACTICALS ───── -->
+<div class="sec-head">
+  <div class="sec-head-left">
+    <span class="sec-number">03</span>
+    <span class="sec-name">Class <span>Practicals</span></span>
+  </div>
+  <div class="sec-line"></div>
+  <span class="sec-count">28 sessions</span>
+</div>
+
+<!-- JAN -->
+<div class="month-block" style="--m-color:#00ff88">
+  <div class="month-head">
+    <div class="month-hex"><span class="month-hex-txt">JAN</span></div>
+    <span class="month-title">January</span>
+    <div class="month-rule"></div>
+  </div>
+  <div class="p-grid">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/21%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">21 JAN</div><div class="p-ttl">DevOps Fundamentals &amp; Setup</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/22%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">22 JAN</div><div class="p-ttl">Docker Basics &amp; Container Management</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/23%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">23 JAN</div><div class="p-ttl">Networking &amp; Multi-Container Basics</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">27 JAN</div><div class="p-ttl">Docker Volumes &amp; Persistent Storage</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/28%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">28 JAN</div><div class="p-ttl">Docker Compose &amp; Multi-Service Deploy</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/30%20Jan%20Readme.md" style="--m-color:#00ff88">
+      <div class="p-dot-col"></div><div><div class="p-num">30 JAN</div><div class="p-ttl">Dockerfile Creation &amp; Image Building</div></div><div class="p-arr">↗</div>
+    </a>
+  </div>
+</div>
+
+<!-- FEB -->
+<div class="month-block" style="--m-color:#00d4ff">
+  <div class="month-head">
+    <div class="month-hex"><span class="month-hex-txt">FEB</span></div>
+    <span class="month-title">February</span>
+    <div class="month-rule"></div>
+  </div>
+  <div class="p-grid">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/3%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">3 FEB</div><div class="p-ttl">Docker Installation &amp; Nginx Deployment</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/4%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">4 FEB</div><div class="p-ttl">Docker Engine Config &amp; Remote API</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/5%20Feb(Class%20Test)%20Readme.md" style="--m-color:#ffd700;border-color:rgba(255,215,0,0.15)">
+      <div class="p-dot-col" style="background:#ffd700"></div><div><div class="p-num" style="color:#ffd700">5 FEB · CLASS TEST</div><div class="p-ttl">Containerize Python SAP ID App</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">6 FEB</div><div class="p-ttl">Python App via Docker Volume Mount</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">6 FEB ASSIGN</div><div class="p-ttl">C App via Docker Volume Mount</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">10 FEB</div><div class="p-ttl">C App Containerization &amp; Optimization</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">10 FEB ASSIGN</div><div class="p-ttl">Multi-Stage Build for Java App</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">11 FEB</div><div class="p-ttl">Volume Management &amp; Data Persistence</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">11 FEB ASSIGN</div><div class="p-ttl">Volume Backup, Restore &amp; TAR Archives</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/12%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">12 FEB</div><div class="p-ttl">Volumes, Bind Mounts, tmpfs &amp; MySQL</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">18 FEB</div><div class="p-ttl">Bridge, Custom Network &amp; Container Comms</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">20 FEB</div><div class="p-ttl">Docker Swarm, Overlay &amp; Macvlan</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">25 FEB</div><div class="p-ttl">Docker Compose — Nginx &amp; WordPress Stack</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/26%20Feb%20Readme.md" style="--m-color:#00d4ff">
+      <div class="p-dot-col"></div><div><div class="p-num">26 FEB</div><div class="p-ttl">Scaling Services with Docker Compose</div></div><div class="p-arr">↗</div>
+    </a>
+  </div>
+</div>
+
+<!-- MAR -->
+<div class="month-block" style="--m-color:#b44fff">
+  <div class="month-head">
+    <div class="month-hex"><span class="month-hex-txt">MAR</span></div>
+    <span class="month-title">March</span>
+    <div class="month-rule"></div>
+  </div>
+  <div class="p-grid">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Mar%20Readme.md" style="--m-color:#b44fff">
+      <div class="p-dot-col"></div><div><div class="p-num">18 MAR</div><div class="p-ttl">Kubernetes Setup via k3d (Mac M1)</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/19%20Mar%20readme.md" style="--m-color:#b44fff">
+      <div class="p-dot-col"></div><div><div class="p-num">19 MAR</div><div class="p-ttl">Kubernetes Deployment &amp; Service Exposure</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Mar%20Readme.md" style="--m-color:#b44fff">
+      <div class="p-dot-col"></div><div><div class="p-num">20 MAR</div><div class="p-ttl">Docker &amp; Portainer GUI Management</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
+      <div class="p-dot-col"></div><div><div class="p-num">25 MAR</div><div class="p-ttl">Apache Web App on Kubernetes</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
+      <div class="p-dot-col"></div><div><div class="p-num">27 MAR</div><div class="p-ttl">Imperative vs Declarative Deployment</div></div><div class="p-arr">↗</div>
+    </a>
+  </div>
+</div>
+
+<!-- APR -->
+<div class="month-block" style="--m-color:#ff4060">
+  <div class="month-head">
+    <div class="month-hex"><span class="month-hex-txt">APR</span></div>
+    <span class="month-title">April</span>
+    <div class="month-rule"></div>
+  </div>
+  <div class="p-grid">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/1%20Apr%20Readme.md" style="--m-color:#ff4060">
+      <div class="p-dot-col"></div><div><div class="p-num">1 APR</div><div class="p-ttl">Jenkins on Docker (Apple Silicon)</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/7%20Apr%20Readme.md" style="--m-color:#ff4060">
+      <div class="p-dot-col"></div><div><div class="p-num">7 APR</div><div class="p-ttl">Git &amp; GitHub SSH Authentication Setup</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/9%20Apr%20Readme.md" style="--m-color:#ff4060">
+      <div class="p-dot-col"></div><div><div class="p-num">9 APR</div><div class="p-ttl">Git Practical — Branching &amp; Merging</div></div><div class="p-arr">↗</div>
+    </a>
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Apr%20Task%20Readme.md" style="--m-color:#ff4060">
+      <div class="p-dot-col"></div><div><div class="p-num">10 APR</div><div class="p-ttl">FastAPI + GitHub Actions + Docker Hub CD</div></div><div class="p-arr">↗</div>
+    </a>
+  </div>
+</div>
+
+<!-- ───── TECH MATRIX ───── -->
+<div class="sec-head" style="margin-top:80px">
+  <div class="sec-head-left">
+    <span class="sec-number">04</span>
+    <span class="sec-name">Tech <span>Stack</span></span>
+  </div>
+  <div class="sec-line"></div>
+</div>
+
+<div class="tech-matrix">
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot"></div><span class="tech-name">Docker</span></div>
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot"></div><span class="tech-name">Docker Compose</span></div>
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot"></div><span class="tech-name">Docker Hub</span></div>
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot"></div><span class="tech-name">Docker Swarm</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Kubernetes</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">k3d / kubectl</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">kubeadm</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Multipass</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Calico CNI</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Portainer</span></div>
+  <div class="tech-item" style="--t-col:#ff4060"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Jenkins</span></div>
+  <div class="tech-item" style="--t-col:#ff4060"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">GitHub Actions</span></div>
+  <div class="tech-item" style="--t-col:#ff8c00"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Ansible</span></div>
+  <div class="tech-item" style="--t-col:#ffd700"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">SonarQube</span></div>
+  <div class="tech-item" style="--t-col:#00ff88"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Nginx</span></div>
+  <div class="tech-item" style="--t-col:#00ff88"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Alpine Linux</span></div>
+  <div class="tech-item" style="--t-col:#8ab4c8"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Vagrant</span></div>
+  <div class="tech-item" style="--t-col:#8ab4c8"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">VirtualBox</span></div>
+  <div class="tech-item" style="--t-col:#ff8c00"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">PostgreSQL</span></div>
+  <div class="tech-item" style="--t-col:#00ff88"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Flask</span></div>
+  <div class="tech-item" style="--t-col:#00ff88"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Node.js / Express</span></div>
+  <div class="tech-item" style="--t-col:#00ff88"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">FastAPI</span></div>
+  <div class="tech-item" style="--t-col:#ff8c00"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Maven</span></div>
+  <div class="tech-item" style="--t-col:#b44fff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Multi-stage Build</span></div>
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Overlay Network</span></div>
+  <div class="tech-item" style="--t-col:#00d4ff"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">IPVLAN / Macvlan</span></div>
+  <div class="tech-item" style="--t-col:#ff4060"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">SSH Key Auth</span></div>
+  <div class="tech-item" style="--t-col:#ff4060"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">Git</span></div>
+  <div class="tech-item" style="--t-col:#ffd700"><div class="tech-dot" style="background:var(--t-col)"></div><span class="tech-name">IaC</span></div>
+</div>
+
+</main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+<div class="footer-inner">
+  <div class="footer-term">
+    <div style="color:var(--muted);margin-bottom:8px;font-size:10px;letter-spacing:1px">// repository metadata</div>
+    <div><span style="color:var(--cyan)">author</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"saumil mishra"</span></div>
+    <div><span style="color:var(--cyan)">sap_id</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"500125960"</span> &nbsp;<span style="color:var(--cyan)">roll</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"R2142231932"</span></div>
+    <div><span style="color:var(--cyan)">batch</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"2 CCVT"</span> &nbsp;<span style="color:var(--cyan)">program</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"B.Tech CSE"</span></div>
+    <div><span style="color:var(--cyan)">subject</span><span style="color:var(--muted)">:</span> <span style="color:var(--purple)">"Containerization and DevOps"</span></div>
+    <div><span style="color:var(--cyan)">status</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"academic_submission"</span> &nbsp;<span style="color:var(--muted)">// AY 2024-25</span></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 saumil mishra · Academic Repository · All experiments documented</span>
+    <a class="footer-link" href="https://github.com/saumilmishra/Containerization-and-DevOps" target="_blank">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View on GitHub
+    </a>
+  </div>
+</div>
+</footer>
+
+<script>
+/* ── MATRIX RAIN ── */
+(function(){
+  const c=document.getElementById('matrix-canvas');
+  const ctx=c.getContext('2d');
+  let W,H,cols,drops;
+  const chars='01アイウエオカキクケコサシスセソタチツテトナニヌネノ><{}[]|∑∫∞∂ABCDEF'.split('');
+  function init(){
+    W=c.width=window.innerWidth;H=c.height=window.innerHeight;
+    cols=Math.floor(W/18);drops=Array(cols).fill(0).map(()=>-Math.random()*H/14);
+  }
+  init();window.addEventListener('resize',init);
+  function draw(){
+    ctx.fillStyle='rgba(2,4,8,0.05)';ctx.fillRect(0,0,W,H);
+    ctx.font='13px Courier New';
+    drops.forEach((y,i)=>{
+      const ch=chars[Math.floor(Math.random()*chars.length)];
+      const x=i*18;
+      ctx.fillStyle=y<2?'rgba(180,255,220,0.9)':'rgba(0,212,100,0.55)';
+      ctx.fillText(ch,x,y*14);
+      if(y*14>H&&Math.random()>0.975)drops[i]=0;
+      drops[i]+=0.4+Math.random()*0.3;
+    });
+  }
+  setInterval(draw,60);
+})();
+
+/* ── CIRCUIT LINES ── */
+(function(){
+  const c=document.getElementById('circuit-canvas');
+  const ctx=c.getContext('2d');
+  let W,H;
+  function init(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  init();window.addEventListener('resize',init);
+  const nodes=[];
+  for(let i=0;i<18;i++){nodes.push({x:Math.random()*1,y:Math.random()*1,vx:(Math.random()-0.5)*0.0003,vy:(Math.random()-0.5)*0.0003})}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>1)n.vx*=-1;if(n.y<0||n.y>1)n.vy*=-1});
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<0.22){
+          const alpha=(1-d/0.22)*0.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x*W,nodes[i].y*H);
+          ctx.lineTo(nodes[j].x*W,nodes[j].y*H);
+          ctx.strokeStyle=`rgba(0,212,255,${alpha})`;
+          ctx.lineWidth=0.5;ctx.stroke();
+          ctx.beginPath();ctx.arc(nodes[i].x*W,nodes[i].y*H,2,0,Math.PI*2);
+          ctx.fillStyle=`rgba(0,212,255,${alpha*1.5})`;ctx.fill();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── 3D TILT ── */
+document.querySelectorAll('.exp-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=e.clientX-r.left,y=e.clientY-r.top;
+    const rx=(y-r.height/2)/r.height*10;
+    const ry=-(x-r.width/2)/r.width*10;
+    card.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave',()=>{card.style.transform=''});
+});
+
+/* ── COUNT-UP ANIMATION ── */
+document.querySelectorAll('.hud-val').forEach(el=>{
+  const target=parseInt(el.textContent);
+  if(isNaN(target))return;
+  let current=0;
+  const unit=el.querySelector('.hud-unit');
+  const unitTxt=unit?unit.outerHTML:'';
+  const step=Math.ceil(target/30);
+  const iv=setInterval(()=>{
+    current=Math.min(current+step,target);
+    el.innerHTML=String(current).padStart(2,'0')+unitTxt;
+    if(current>=target)clearInterval(iv);
+  },40);
+});
+</script>
+</body>
+</html>
