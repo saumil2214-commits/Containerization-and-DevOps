@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Containerization & DevOps — Daksh Mehrotra</title>
+<title>Containerization & DevOps — saumil mishra</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -430,17 +430,17 @@ footer{
     <div class="t-dot" style="background:#ff5f57"></div>
     <div class="t-dot" style="background:#ffbd2e"></div>
     <div class="t-dot" style="background:#28ca42"></div>
-    <span class="terminal-title">daksh@devops-lab ~ bash</span>
+    <span class="terminal-title">saumil@devops-lab ~ bash</span>
   </div>
   <div class="terminal-body">
-    <div class="t-line"><span class="t-prompt">daksh@lab:~$</span><span class="t-cmd"> cat student_info.json</span></div>
-    <div class="t-line"><span class="t-out">{ <span class="t-val">"name"</span>: <span class="t-val">"Daksh Mehrotra"</span>, <span class="t-val">"sap"</span>: <span class="t-val">"500125960"</span> }</span></div>
+    <div class="t-line"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> cat student_info.json</span></div>
+    <div class="t-line"><span class="t-out">{ <span class="t-val">"name"</span>: <span class="t-val">"saumil mishra"</span>, <span class="t-val">"sap"</span>: <span class="t-val">"500125960"</span> }</span></div>
     <div class="t-line"><span class="t-out">{ <span class="t-val">"roll"</span>: <span class="t-val">"R2142231932"</span>, <span class="t-val">"batch"</span>: <span class="t-val">"2 CCVT"</span> }</span></div>
-    <div class="t-line" style="margin-top:8px"><span class="t-prompt">daksh@lab:~$</span><span class="t-cmd"> docker ps -a | grep lab</span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> docker ps -a | grep lab</span></div>
     <div class="t-line"><span class="t-out" style="color:var(--green)">✔ experiments: <span class="t-val">12 RUNNING</span> &nbsp;|&nbsp; practicals: <span class="t-val">28 COMPLETED</span></span></div>
-    <div class="t-line" style="margin-top:8px"><span class="t-prompt">daksh@lab:~$</span><span class="t-cmd"> kubectl get all --namespace=devops-lab</span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="t-cmd"> kubectl get all --namespace=devops-lab</span></div>
     <div class="t-line"><span class="t-out">STATUS: <span style="color:var(--green)">All systems operational</span> &nbsp;<span class="t-comment">// academic year 2024-25</span></span></div>
-    <div class="t-line" style="margin-top:8px"><span class="t-prompt">daksh@lab:~$</span><span class="cursor"></span></div>
+    <div class="t-line" style="margin-top:8px"><span class="t-prompt">saumil@lab:~$</span><span class="cursor"></span></div>
   </div>
 </div>
 
@@ -560,7 +560,7 @@ footer{
       <h3>Dockerfile, .dockerignore &amp; Docker Hub Push</h3>
       <div class="exp-snippet">
         <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">build</span> <span class="arg">--no-cache -t flask-app:prod .</span></div>
-        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">push</span> <span class="arg">dakshmehrotra/flask-app:prod</span></div>
+        <div><span class="ps">$</span><span class="cmd">docker</span> <span class="flag">push</span> <span class="arg">saumilmishra/flask-app:prod</span></div>
       </div>
       <p>Full containerization pipeline: Flask (:5001) + Node.js (:3000). Implemented .dockerignore for security hardening, multi-stage builds to shrink image size, published both to Docker Hub and validated the pull cycle.</p>
       <div class="exp-footer">
@@ -799,22 +799,22 @@ footer{
     <div class="month-rule"></div>
   </div>
   <div class="p-grid">
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/21%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/21%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">21 JAN</div><div class="p-ttl">DevOps Fundamentals &amp; Setup</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/22%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/22%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">22 JAN</div><div class="p-ttl">Docker Basics &amp; Container Management</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/23%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/23%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">23 JAN</div><div class="p-ttl">Networking &amp; Multi-Container Basics</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">27 JAN</div><div class="p-ttl">Docker Volumes &amp; Persistent Storage</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/28%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/28%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">28 JAN</div><div class="p-ttl">Docker Compose &amp; Multi-Service Deploy</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/30%20Jan%20Readme.md" style="--m-color:#00ff88">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/30%20Jan%20Readme.md" style="--m-color:#00ff88">
       <div class="p-dot-col"></div><div><div class="p-num">30 JAN</div><div class="p-ttl">Dockerfile Creation &amp; Image Building</div></div><div class="p-arr">↗</div>
     </a>
   </div>
@@ -828,46 +828,46 @@ footer{
     <div class="month-rule"></div>
   </div>
   <div class="p-grid">
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/3%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/3%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">3 FEB</div><div class="p-ttl">Docker Installation &amp; Nginx Deployment</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/4%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/4%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">4 FEB</div><div class="p-ttl">Docker Engine Config &amp; Remote API</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/5%20Feb(Class%20Test)%20Readme.md" style="--m-color:#ffd700;border-color:rgba(255,215,0,0.15)">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/5%20Feb(Class%20Test)%20Readme.md" style="--m-color:#ffd700;border-color:rgba(255,215,0,0.15)">
       <div class="p-dot-col" style="background:#ffd700"></div><div><div class="p-num" style="color:#ffd700">5 FEB · CLASS TEST</div><div class="p-ttl">Containerize Python SAP ID App</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">6 FEB</div><div class="p-ttl">Python App via Docker Volume Mount</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/6%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">6 FEB ASSIGN</div><div class="p-ttl">C App via Docker Volume Mount</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">10 FEB</div><div class="p-ttl">C App Containerization &amp; Optimization</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">10 FEB ASSIGN</div><div class="p-ttl">Multi-Stage Build for Java App</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">11 FEB</div><div class="p-ttl">Volume Management &amp; Data Persistence</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/11%20Feb%20Assignment%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">11 FEB ASSIGN</div><div class="p-ttl">Volume Backup, Restore &amp; TAR Archives</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/12%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/12%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">12 FEB</div><div class="p-ttl">Volumes, Bind Mounts, tmpfs &amp; MySQL</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">18 FEB</div><div class="p-ttl">Bridge, Custom Network &amp; Container Comms</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">20 FEB</div><div class="p-ttl">Docker Swarm, Overlay &amp; Macvlan</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">25 FEB</div><div class="p-ttl">Docker Compose — Nginx &amp; WordPress Stack</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/26%20Feb%20Readme.md" style="--m-color:#00d4ff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/26%20Feb%20Readme.md" style="--m-color:#00d4ff">
       <div class="p-dot-col"></div><div><div class="p-num">26 FEB</div><div class="p-ttl">Scaling Services with Docker Compose</div></div><div class="p-arr">↗</div>
     </a>
   </div>
@@ -881,19 +881,19 @@ footer{
     <div class="month-rule"></div>
   </div>
   <div class="p-grid">
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Mar%20Readme.md" style="--m-color:#b44fff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/18%20Mar%20Readme.md" style="--m-color:#b44fff">
       <div class="p-dot-col"></div><div><div class="p-num">18 MAR</div><div class="p-ttl">Kubernetes Setup via k3d (Mac M1)</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/19%20Mar%20readme.md" style="--m-color:#b44fff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/19%20Mar%20readme.md" style="--m-color:#b44fff">
       <div class="p-dot-col"></div><div><div class="p-num">19 MAR</div><div class="p-ttl">Kubernetes Deployment &amp; Service Exposure</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Mar%20Readme.md" style="--m-color:#b44fff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/20%20Mar%20Readme.md" style="--m-color:#b44fff">
       <div class="p-dot-col"></div><div><div class="p-num">20 MAR</div><div class="p-ttl">Docker &amp; Portainer GUI Management</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/25%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
       <div class="p-dot-col"></div><div><div class="p-num">25 MAR</div><div class="p-ttl">Apache Web App on Kubernetes</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/27%20Mar%20Task%20Readme.md" style="--m-color:#b44fff">
       <div class="p-dot-col"></div><div><div class="p-num">27 MAR</div><div class="p-ttl">Imperative vs Declarative Deployment</div></div><div class="p-arr">↗</div>
     </a>
   </div>
@@ -907,16 +907,16 @@ footer{
     <div class="month-rule"></div>
   </div>
   <div class="p-grid">
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/1%20Apr%20Readme.md" style="--m-color:#ff4060">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/1%20Apr%20Readme.md" style="--m-color:#ff4060">
       <div class="p-dot-col"></div><div><div class="p-num">1 APR</div><div class="p-ttl">Jenkins on Docker (Apple Silicon)</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/7%20Apr%20Readme.md" style="--m-color:#ff4060">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/7%20Apr%20Readme.md" style="--m-color:#ff4060">
       <div class="p-dot-col"></div><div><div class="p-num">7 APR</div><div class="p-ttl">Git &amp; GitHub SSH Authentication Setup</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/9%20Apr%20Readme.md" style="--m-color:#ff4060">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/9%20Apr%20Readme.md" style="--m-color:#ff4060">
       <div class="p-dot-col"></div><div><div class="p-num">9 APR</div><div class="p-ttl">Git Practical — Branching &amp; Merging</div></div><div class="p-arr">↗</div>
     </a>
-    <a class="p-card" href="https://github.com/DakshMehrotra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Apr%20Task%20Readme.md" style="--m-color:#ff4060">
+    <a class="p-card" href="https://github.com/saumilmishra/Containerization-and-DevOps/blob/main/Class%20Practical/10%20Apr%20Task%20Readme.md" style="--m-color:#ff4060">
       <div class="p-dot-col"></div><div><div class="p-num">10 APR</div><div class="p-ttl">FastAPI + GitHub Actions + Docker Hub CD</div></div><div class="p-arr">↗</div>
     </a>
   </div>
@@ -970,15 +970,15 @@ footer{
 <div class="footer-inner">
   <div class="footer-term">
     <div style="color:var(--muted);margin-bottom:8px;font-size:10px;letter-spacing:1px">// repository metadata</div>
-    <div><span style="color:var(--cyan)">author</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"Daksh Mehrotra"</span></div>
+    <div><span style="color:var(--cyan)">author</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"saumil mishra"</span></div>
     <div><span style="color:var(--cyan)">sap_id</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"500125960"</span> &nbsp;<span style="color:var(--cyan)">roll</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"R2142231932"</span></div>
     <div><span style="color:var(--cyan)">batch</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"2 CCVT"</span> &nbsp;<span style="color:var(--cyan)">program</span><span style="color:var(--muted)">:</span> <span style="color:var(--yellow)">"B.Tech CSE"</span></div>
     <div><span style="color:var(--cyan)">subject</span><span style="color:var(--muted)">:</span> <span style="color:var(--purple)">"Containerization and DevOps"</span></div>
     <div><span style="color:var(--cyan)">status</span><span style="color:var(--muted)">:</span> <span style="color:var(--green)">"academic_submission"</span> &nbsp;<span style="color:var(--muted)">// AY 2024-25</span></div>
   </div>
   <div class="footer-bottom">
-    <span class="footer-copy">© 2025 Daksh Mehrotra · Academic Repository · All experiments documented</span>
-    <a class="footer-link" href="https://github.com/DakshMehrotra/Containerization-and-DevOps" target="_blank">
+    <span class="footer-copy">© 2025 saumil mishra · Academic Repository · All experiments documented</span>
+    <a class="footer-link" href="https://github.com/saumilmishra/Containerization-and-DevOps" target="_blank">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       View on GitHub
     </a>
